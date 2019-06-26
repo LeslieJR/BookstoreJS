@@ -1,21 +1,27 @@
-let data;
-
-
-window.onload = fetch("https://api.myjson.com/bins/1h3vb3", 
-    {method:"GET"}).then(function(response) {
+const Vueapp = new Vue ({
+  el: '#pageContent',
+  data: {
+    books = []
+  },
+  methods: {
+    getData(){
+      fetch("https://api.myjson.com/bins/1h3vb3").then(function(response) {
         if (response.ok){
           return response.json();
         }
         throw new Error(response.status);
       }).then(function (json){
-        data = json.books;
-        
-        displayImages(data);
+        this.books = json.books;
+        console.log(this.books);
          
         }).catch(function(error){
           console.log("Request failed:" + error.message);
           });
-        
+    }
+  }
+}) 
+
+
 
 function displayImages(data){
   
