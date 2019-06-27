@@ -1,16 +1,22 @@
-div.pageContent{
+#pageContent{
     width: 1500px;
     margin: auto;
 }
-#images{
+.images{
   display: flex;
   flex-flow: row wrap;
   justify-content: space-around;
   align-content: space-around;
   
 }
-
+body{
+  font-family: 'PT Sans Narrow', sans-serif;
+}
+h1{
+  margin: 20px;
+}
 p{
+  font-size: 20px;
   margin: 30px;
   text-align: justify;
 }
