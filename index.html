@@ -6,13 +6,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Ubiqum Bookstore with Vue</title>
+    <!-- link to display the favicon -->
     <link rel='shortcut icon' href='images/favicon.png' type='image/x-icon' />
+    <!-- cdn vuejs -->
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <!-- link to the stylesheet for bootstrap -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <!-- jquery js script -->
     <script src="//code.jquery.com/jquery-3.3.1.min.js"></script>
+    <!-- cdn fancyapp-->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" />
     <script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
+    <!-- link google fonts -->
     <link href="https://fonts.googleapis.com/css?family=PT+Sans+Narrow&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="scripts/style.css">
 </head>
@@ -23,36 +29,37 @@
             <div><img src="images/bookstore.png" alt="logo"></div>
             <div class="d-flex align-items-end">
                 <form id="search-books">
-                    <input type="text" placeholder="Search" aria-label="Search">
+                    <input type="text" placeholder="Search" aria-label="Search" v-model="inputSearch">
                 </form>
+            </div>
+
+            <div>
+                <input type="checkbox" id="EN" value="EN" v-model="checkedLanguage">
+                <label for="EN">EN</label>
+                <input type="checkbox" id="ES" value="ES" v-model="checkedLanguage">
+                <label for="ES">ES</label>
+                <input type="checkbox" id="CAT" value="CA" v-model="checkedLanguage">
+                <label for="CA">CA</label>
             </div>
         </div>
 
         <div class="images">
-            <div v-for="book in books" class="flip-card">
-                <div class="flip-card-inner">
-                    <div class="flip-card-front">
-                        <img v-bind:src="book.portada" alt="book.titulo" style="width:300px; height: 467px;">
-                    </div>
-                    <div class="flip-card-back">
-                        <h1>{{book.titulo}}</h1>
-                        <p>{{book.descripcion}}</p>
-                        <a v-bind:href="book.detalle" data-fancybox="gallery"><button type="button"
-                                class="btn btn-outline-light">More Info</button></a>
-                    </div>
-                </div>
-            </div>
+            <div-book v-for="book in filteredBooks" :item='book'></div-book>
         </div>
-
+        <footer class="page-footer font-small ">
+            <!-- Copyright -->
+            <div class="footer-copyright text-center py-3">© 2019 Ubiqum | All rights reserved
+            </div>
+            <!-- Copyright -->
+        </footer>
     </div>
 
-    </div>
     </div>
 
 
     <!-- main js -->
     <script src="scripts/main.js"></script>
-
+    <!-- scripts to use bootsrap -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
         integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
         crossorigin="anonymous"></script>

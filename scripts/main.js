@@ -1,14 +1,16 @@
+Vue.component('div-book', {
+  props: ['item'],
+  template: `<div class="flip-card"><div class="flip-card-inner"><div class="flip-card-front"><img v-bind:src="item.portada" alt="item.titulo" class="book-image" ></div><div class="flip-card-back"><h1>{{item.titulo}}</h1><p>{{item.descripcion}}</p><a v-bind:href="item.detalle" data-fancybox="gallery"><button type="button"class="btn btn-outline-light">More Info</button></a></div></div></div>`
+})
+
 const Vueapp = new Vue ({
   el: '#pageContent',
   data: {
-    books : []
+    books : [],
+    inputSearch : "",
+    checkedLanguage: []
   },
-  created(){
-    this.getData();
-  },
-  methods: {
-    getData(){
-
+  created(){  
       fetch("https://api.myjson.com/bins/1h3vb3").then(function(response) {
         if (response.ok){
           return response.json();
@@ -19,33 +21,18 @@ const Vueapp = new Vue ({
         
         }).catch(function(error){
           console.log("Request failed:" + error.message);
-          });
-    }
-  },
+          })
+    },
   computed: {
-    
+   
+    filteredBooks() {
+      return this.books.filter(book => {
+        let filterBySearch =  book.titulo.toLowerCase().includes(this.inputSearch.toLowerCase()) || book.descripcion.toLowerCase().includes(this.inputSearch.toLowerCase());
+
+        let filterByLanguage =this.checkedLanguage.includes(book.idioma.toUpperCase()) || this.checkedLanguage.length == 0;
+          return filterBySearch && filterByLanguage;
+    })
   }
-}) 
-
-
-
-
-const searchBar = document.forms['search-books'].querySelector('input');
-searchBar.addEventListener('keyup',function(e){
-  const term = e.target.value.toLowerCase();
-  // const divBook= document.getElementsByClassName('flip-card')
-  const bookBack = document.getElementsByClassName('flip-card-back');
-  
-  Array.from(bookBack).forEach(function(book){
-    const desc = book.innerText;
-
-    if(desc.toLowerCase().indexOf(term)!= -1){
-      book.parentNode.parentNode.style.display = 'block';
-    }else{
-      book.parentNode.parentNode.style.display ='none';
-      const images = document.getElementById('images');
-      images.innerText ='No match found';
-      
-    }
-  })
+}
 })
+  

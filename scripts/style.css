@@ -9,6 +9,18 @@
   align-content: space-around;
   
 }
+[alt="logo"]{
+  width: 350px;
+}
+input{
+  margin:30px;
+}
+.book-image{
+  width:300px; 
+  height: 467px;
+  margin-right: 70px;
+}
+
 body{
   font-family: 'PT Sans Narrow', sans-serif;
 }
@@ -20,6 +32,7 @@ p{
   margin: 30px;
   text-align: justify;
 }
+
 button{
   width: 40%; 
   margin-top: auto;
@@ -28,8 +41,9 @@ button{
   margin-bottom: 0px;
 
 }
-form{
-  width: 400px;
+.header,
+footer{
+  background-image: url('/images/bright-design-floor-235994.jpg');
 }
 #search{
   margin:0;
