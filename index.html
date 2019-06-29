@@ -25,21 +25,23 @@
 
 <body>
     <div id="pageContent">
-        <div class="header d-flex flex-row justify-content-between">
+        <div class="header d-flex flex-row justify-content-between ">
             <div><img src="images/bookstore.png" alt="logo"></div>
-            <div class="d-flex align-items-end">
-                <form id="search-books">
-                    <input type="text" placeholder="Search" aria-label="Search" v-model="inputSearch">
-                </form>
-            </div>
+            <div class="d-flex  align-items-end">
+                <div class="align-items-end">
+                    <form id="search-books">
+                        <input type="text" placeholder="Search" aria-label="Search" v-model="inputSearch">
+                    </form>
+                </div>
 
-            <div>
-                <input type="checkbox" id="EN" value="EN" v-model="checkedLanguage">
-                <label for="EN">EN</label>
-                <input type="checkbox" id="ES" value="ES" v-model="checkedLanguage">
-                <label for="ES">ES</label>
-                <input type="checkbox" id="CAT" value="CA" v-model="checkedLanguage">
-                <label for="CA">CA</label>
+                <div>
+                    <label for="EN"><input type="checkbox" id="EN" value="" v-model="checkedLanguage">
+                        EN</label>
+                    <label for="ES"><input type="checkbox" id="ES" value="ES" v-model="checkedLanguage">
+                        ES</label>
+                    <label for="CA"><input type="checkbox" id="CAT" value="CA" v-model="checkedLanguage">
+                        CA</label>
+                </div>
             </div>
         </div>
 
