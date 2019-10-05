@@ -1,53 +1,78 @@
-
-.images{
+.images {
   width: 1500px;
   margin: auto;
   display: flex;
   flex-flow: row wrap;
   justify-content: space-around;
   align-content: space-around;
-  
+  background-color: #fa6462;
+
 }
-[alt="logo"]{
-  width: 350px;
+
+.d-flex {
+  align-items: center;
 }
-input{
-  margin:30px;
+
+.d-flex h1 {
+  font-family: 'Ultra', serif;
+  font-size: 5rem;
 }
-.book-image{
-  width:300px; 
+
+.d-flex img {
+  padding-left: 24px;
+  padding-bottom: 10px;
+
+}
+
+[alt="logo"] {
+  width: 160px;
+}
+
+input {
+  font-size: 1.5rem;
+  margin: 35px 30px 0px 30px;
+}
+
+.book-image {
+  width: 300px;
   height: 467px;
   margin-right: 70px;
 }
 
-body{
+body {
   font-family: 'PT Sans Narrow', sans-serif;
 }
-h1{
+
+h1 {
   margin: 20px;
 }
-p{
+
+p {
   font-size: 20px;
   margin: 30px;
   text-align: justify;
 }
 
-button{
-  width: 40%; 
+button {
+  width: 40%;
   margin-top: auto;
   margin-left: 30%;
   margin-right: 30%;
   margin-bottom: 0px;
 
 }
+
 .header,
-footer{
+footer {
   background-image: url('/images/bright-design-floor-235994.jpg');
 }
-#search{
-  margin:0;
-  width: 40%; ;
+
+#search {
+  margin: 0;
+  width: 40%;
+  ;
 }
+
 .flip-card {
   background-color: transparent;
   width: 300px;
@@ -60,17 +85,18 @@ footer{
   position: relative;
   width: 100%;
   height: 100%;
-  
+
   transition: transform 0.6s;
   transform-style: preserve-3d;
-  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
 }
 
 .flip-card:hover .flip-card-inner {
   transform: rotateY(180deg);
 }
 
-.flip-card-front, .flip-card-back {
+.flip-card-front,
+.flip-card-back {
   position: absolute;
   width: 100%;
   height: 100%;

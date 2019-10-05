@@ -20,13 +20,16 @@
     <script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
     <!-- link google fonts -->
     <link href="https://fonts.googleapis.com/css?family=PT+Sans+Narrow&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Ultra&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="scripts/style.css">
 </head>
 
 <body>
     <div id="pageContent">
         <div class="header d-flex flex-row justify-content-between ">
-            <div><img src="images/bookstore.png" alt="logo"></div>
+            <div class="d-flex"><img src="./images/book.png" alt="logo">
+                <h1>Bookstore</h1>
+            </div>
             <div class="d-flex  align-items-end">
                 <div class="align-items-end">
                     <form id="search-books">
@@ -34,14 +37,14 @@
                     </form>
                 </div>
 
-                <div>
+                <!-- <div>
                     <label for="EN"><input type="checkbox" id="EN" value="" v-model="checkedLanguage">
                         EN</label>
                     <label for="ES"><input type="checkbox" id="ES" value="ES" v-model="checkedLanguage">
                         ES</label>
                     <label for="CA"><input type="checkbox" id="CAT" value="CA" v-model="checkedLanguage">
                         CA</label>
-                </div>
+                </div> -->
             </div>
         </div>
 
@@ -63,14 +66,14 @@
     <script src="scripts/main.js"></script>
     <!-- scripts to use bootsrap -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-        crossorigin="anonymous"></script>
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
+    </script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
-        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
-        crossorigin="anonymous"></script>
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous">
+    </script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
-        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
-        crossorigin="anonymous"></script>
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
+    </script>
 </body>
 
 </html>
